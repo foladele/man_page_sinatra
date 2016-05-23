@@ -1,0 +1,21 @@
+<h1>Command Result</h1>
+<br/>
+<a href="/">Menu </a>
+<a href="/command_line">Commands</a>
+<hr/>
+
+
+
+<% if @command == 'mv'%>
+	<%= `man mv | col -b` %>
+<% elsif @command == 'cp'%>
+	<%= `man cp | col -b` %>
+<% elsif @command == 'mkdir'%>
+	<%= `man mkdir | col -b` %>
+<% elsif @command == 'ls'%>
+	<%= `man ls | col -b` %>
+<% elsif @command == 'rm'%>
+	<%= `man rm | col -b` %>
+<% else %>
+	<%= "unknown command" %>
+<% end%>
